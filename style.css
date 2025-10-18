@@ -1,0 +1,284 @@
+/* css/style.css */
+
+/* --- Global Color Variables & Fonts --- */
+:root {
+    --primary-color: #007bff; /* Main blue */
+    --secondary-color: #f8f9fa; /* Light grey background */
+    --dark-color: #343a40; /* Dark text */
+    --light-color: #ffffff; /* White text */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- General Reset & Setup --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+/* --- Header & Navigation Bar --- */
+.main-header {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: var(--light-color);
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.main-nav ul li a.active,
+.main-nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Sections --- */
+.main-section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* --- Home Page: Hero Section --- */
+.hero {
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* --- About Page --- */
+.about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-content img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+}
+
+.about-info ul {
+    list-style: none;
+}
+
+.about-info ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.about-info ul li strong {
+    margin-right: 10px;
+}
+
+/* --- Projects Page --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 1.5rem;
+}
+
+/* --- Skills Page --- */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skills-list li {
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 0.7rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+}
+
+/* --- Contact Page & Form --- */
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* --- New rules for better form alignment --- */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* This is the key: vertically centers the items */
+}
+
+/* Style each option pair (input + label) */
+.radio-group div,
+.checkbox-group div {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between option pairs */
+    margin-bottom: 10px; /* Space for wrapping */
+}
+
+.radio-group input,
+.checkbox-group input {
+    margin-right: 6px; /* Space between the box and the text */
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: normal;
+}
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 2rem; 
+    background: var(--dark-color);
+    color: var(--light-color);
+    margin-top: 3rem;
+}
+
+/* --- Responsive Media Query --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .main-nav ul li {
+        margin: 0.5rem 0;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
